@@ -17,4 +17,12 @@ describe('StringCalculatorService', () => {
     expect(service.add('1')).toBe(1);
   });
 
+  it('should return the sum for two numbers', () => {
+    expect(service.add('1,2')).toBe(3);
+  });
+
+  it('should return the sum for multiple numbers', () => {
+    expect(service.add('1,2,3')).toBe(6);
+  });
+
 });
