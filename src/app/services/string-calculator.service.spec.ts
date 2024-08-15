@@ -25,4 +25,20 @@ describe('StringCalculatorService', () => {
     expect(service.add('1,2,3')).toBe(6);
   });
 
+  it('should handle new lines between numbers', () => {
+    expect(service.add('1\n2,3')).toBe(6);
+  });
+
+  it('should support different delimiters', () => {
+    expect(service.add('//;\n1;2')).toBe(3);
+  });
+
+  it('should throw an exception for negative numbers', () => {
+    expect(() => service.add('1,-2,3')).toThrowError('negative numbers not allowed -2');
+  });
+
+  it('should throw an exception for multiple negative numbers', () => {
+    expect(() => service.add('-1,-2,3')).toThrowError('negative numbers not allowed -1, -2');
+  });
+
 });
