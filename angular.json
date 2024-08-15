@@ -16,6 +16,7 @@
             "outputPath": "dist/string-calculator",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "baseHref": "/string-calculator",
             "polyfills": [
               "zone.js"
             ],
