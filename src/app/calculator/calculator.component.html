@@ -1,0 +1,25 @@
+<div class="container mt-5">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">String Calculator</h2>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="calcForm" (ngSubmit)="onCalculate()">
+          <div class="form-group mb-3">
+            <label for="numbers" class="form-label">Enter numbers (comma-separated or newline-separated):</label>
+            <textarea id="numbers" class="form-control" formControlName="numbers" placeholder="e.g. 1,2,3 or 1\n2\n3" rows="4"></textarea>
+            <small class="form-text text-muted">You can use commas or new lines to separate numbers. For example: "1,2,3" or "1\n2,3"</small>
+          </div>
+          <button type="submit" class="btn btn-primary">Calculate</button>
+        </form>
+      </div>
+    </div>
+  
+    <div *ngIf="result !== null" class="alert alert-success mt-3">
+      Sum: {{ result }}
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+      Error: {{ errorMessage }}
+    </div>
+  </div>
+  
